@@ -14,6 +14,22 @@ void solve() {
     for (int i = 0; i < m; i++) {
         cin >> b[i];
     }
+    int i = 0, j = 0;
+    vector<int> c(m);
+    int cnt = 0;
+    while (j < m) {
+        if (i < n && a[i] < b[j]) {
+            i++;
+        } else {
+            c[j] = i;
+            j++;
+        }
+        cnt++;
+    }
+    for (int i = 0; i < m; i++) {
+        cout << c[i] << " ";
+    }
+    cout << endl;
 }
 
 signed main() {
